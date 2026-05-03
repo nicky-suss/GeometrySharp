@@ -49,4 +49,15 @@ public static class PlaneGeometry
             return a + b + c + d;
         }
     }
+    public static class Rhombus
+    {
+        public static double GetArea(double dOne, double dTwo)
+        {
+            return (dOne * dTwo) / 2;
+        }
+        public static double GetPerimeter(double a)
+        {
+            return 4 * a;
+        }
+    }
 }
