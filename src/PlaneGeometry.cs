@@ -76,6 +76,13 @@ public static class PlaneGeometry
         public static double GetArea(double a, double b)
         {
             return Math.PI * a * b;
-        }   
+        }
+    }
+    public static class CircleSector
+    {
+        public static double GetArea(double a, double r)
+        {
+            return (a / 360) * (Math.PI * (r * r));
+        }
     }
 }
