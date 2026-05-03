@@ -71,4 +71,11 @@ public static class PlaneGeometry
             return (a + b) * 2;
         }
     }
+    public static class Ellipse
+    {
+        public static double GetArea(double a, double b)
+        {
+            return Math.PI * a * b;
+        }   
+    }
 }
