@@ -60,4 +60,15 @@ public static class PlaneGeometry
             return 4 * a;
         }
     }
+    public static class Parallelogram
+    {
+        public static double GetArea(double b, double h)
+        {
+            return b * h;
+        }
+        public static double GetPerimeter(double a, double b)
+        {
+            return (a + b) * 2;
+        }
+    }
 }
