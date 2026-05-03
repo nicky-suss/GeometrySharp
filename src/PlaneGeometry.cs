@@ -38,5 +38,15 @@ public static class PlaneGeometry
             return L * 2;
         }
     }
-
+    public static class Trapezoid
+    {
+        public static double GetArea(double a, double b, double h)
+        {
+            return ((a + b) / 2) * h;
+        }
+        public static double GetPerimeter(double a, double b, double c, double d)
+        {
+            return a + b + c + d;
+        }
+    }
 }
