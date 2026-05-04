@@ -12,4 +12,9 @@ public static class SolidGeometry
         public static double GetVolume(double r) => ((r * r * r) * Math.PI) * (4.0 / 3.0);
         public static double GetSurfaceArea(double r) => ((r * r) * Math.PI) * 4;
     }
+    public static class Cylinder
+    {
+        public static double GetVolume(double r, double h) => ((r * r) * Math.PI) * h;
+        public static double GetSurfaceArea(double r, double h) => (2 * Math.PI * r * (r + h));
+    }
 }
