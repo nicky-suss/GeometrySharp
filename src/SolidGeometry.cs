@@ -17,4 +17,9 @@ public static class SolidGeometry
         public static double GetVolume(double r, double h) => ((r * r) * Math.PI) * h;
         public static double GetSurfaceArea(double r, double h) => (2 * Math.PI * r * (r + h));
     }
+    public static class Cone
+    {
+        public static double GetVolume(double r, double h) => (r * r * h * Math.PI) / 3.0;
+        public static double GetSurfaceArea(double r, double h) => (Math.PI * r * (r + Math.Sqrt(h * h + r * r)));
+    }
 }
