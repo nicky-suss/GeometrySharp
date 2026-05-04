@@ -25,6 +25,11 @@ public static class SolidGeometry
     public static class Cuboid
     {
         public static double GetVolume(double a, double b, double c) => a * b * c;
-        public static double GetSurfaceArea(double a, double b, double c) => 2 * (a*b + b*c + a*c);
+        public static double GetSurfaceArea(double a, double b, double c) => 2 * (a * b + b * c + a * c);
+    }
+    public static class Pyramid
+    {
+        public static double GetVolume(double a, double h) => ((a * a) * h) / 3.0;
+        public static double GetSurfaceArea(double a, double h) => (a * a) + 2*a * Math.Sqrt(((a*a) / 4) + h * h);
     }
 }
