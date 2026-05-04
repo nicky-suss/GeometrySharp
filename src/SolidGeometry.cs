@@ -22,4 +22,9 @@ public static class SolidGeometry
         public static double GetVolume(double r, double h) => (r * r * h * Math.PI) / 3.0;
         public static double GetSurfaceArea(double r, double h) => (Math.PI * r * (r + Math.Sqrt(h * h + r * r)));
     }
+    public static class Cuboid
+    {
+        public static double GetVolume(double a, double b, double c) => a * b * c;
+        public static double GetSurfaceArea(double a, double b, double c) => 2 * (a*b + b*c + a*c);
+    }
 }
