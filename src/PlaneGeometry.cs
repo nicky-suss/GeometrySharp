@@ -1,4 +1,4 @@
-﻿namespace GeoSharp;
+﻿namespace GeometrySharp;
 
 /// <summary>
 /// Provides static methods for calculating geometric properties of 2D shapes.

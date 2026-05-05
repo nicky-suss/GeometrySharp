@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>GeometrySharp</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>1.0.0</Version>
+  <Title>Geometry Sharp</Title>
+  <Authors>nicky_sus</Authors>
+  <Description>You can use Geometry formulas by this library</Description>
+
+  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  <RepositoryUrl>https://github.com/nicky-suss/GeoSharp</RepositoryUrl>
+
+   <PackageTags>Math;Geometry</PackageTags>
+   <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+  <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
