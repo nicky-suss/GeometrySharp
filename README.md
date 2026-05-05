@@ -1,5 +1,6 @@
 # GeometrySharp
 
+![NuGet Version](https://img.shields.io/nuget/v/GeometrySharp?style=for-the-badge) ![NuGet Downloads](https://img.shields.io/nuget/dt/GeometrySharp?style=for-the-badge)
 ### 🔺🔹This library allows you to use Geometry formulas◽⚪
 
 ## Installation
