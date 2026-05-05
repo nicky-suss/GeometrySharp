@@ -14,7 +14,7 @@
 
   <GenerateDocumentationFile>true</GenerateDocumentationFile>
   <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  <RepositoryUrl>https://github.com/nicky-suss/GeoSharp</RepositoryUrl>
+  <RepositoryUrl>https://github.com/nicky-suss/GeometrySharp</RepositoryUrl>
 
    <PackageTags>Math;Geometry</PackageTags>
    <PackageReadmeFile>README.md</PackageReadmeFile>
