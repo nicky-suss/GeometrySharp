@@ -199,7 +199,7 @@ public static class PlaneGeometry
         /// <returns>The area of the sector.</returns>
         public static double GetArea(double a, double r)
         {
-            return (a / 360) * (Math.PI * (r * r));
+            return (a / 360.0) * (Math.PI * (r * r));
         }
     }
 }
