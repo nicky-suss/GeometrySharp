@@ -73,7 +73,10 @@ public static class PlaneGeometry
         public static double GetHeronArea(double a, double b, double c)
         {
             double s = (a + b + c) / 2;
-            return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            double ex = s * (s - a) * (s - b) * (s - c);
+            if (ex < 0)
+                return 0;
+            return Math.Sqrt(ex);
         }
         /// <summary>
         /// Determines whether a triangle is a right-angled triangle using the Pythagorean theorem.
