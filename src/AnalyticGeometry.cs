@@ -40,4 +40,27 @@ public static class AnalyticGeometry
             return (midX, midY);
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class LineUtils
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xOne"></param>
+        /// <param name="yOne"></param>
+        /// <param name="xTwo"></param>
+        /// <param name="yTwo"></param>
+        /// <returns></returns>
+        /// <exception cref="DivideByZeroException"></exception>
+        public static double GetSlope(double xOne, double yOne, double xTwo, double yTwo)
+        {
+            if (Math.Abs(xTwo - xOne) < 0.000001)
+            {
+                throw new DivideByZeroException("The slope is undefined for vertical lines because the change in X is zero.");
+            }
+            return (yTwo - yOne) / (xTwo - xOne);
+        }
+    }
 }
