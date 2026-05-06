@@ -63,6 +63,18 @@ public static class PlaneGeometry
             double A = b * h;
             return A / 2;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public static double GetHeronArea(double a, double b, double c)
+        {
+            double s = (a + b + c) / 2;
+            return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+        }
     }
     /// <summary>
     /// Provides calculations for circle geometry.
