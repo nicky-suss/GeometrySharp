@@ -64,24 +64,24 @@ public static class PlaneGeometry
             return A / 2;
         }
         /// <summary>
-        /// 
+        /// Calculates the area of a triangle using Heron's formula based on three side lengths.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        /// <param name="a">The length of the first side.</param>
+        /// <param name="b">The length of the second side.</param>
+        /// <param name="c">The length of the third side.</param>
+        /// <returns>The area of the triangle.</returns>
         public static double GetHeronArea(double a, double b, double c)
         {
             double s = (a + b + c) / 2;
             return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
         /// <summary>
-        /// 
+        /// Determines whether a triangle is a right-angled triangle using the Pythagorean theorem.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        /// <param name="a">The length of the first side.</param>
+        /// <param name="b">The length of the second side.</param>
+        /// <param name="c">The length of the third side.</param>
+        /// <returns>True if the triangle is right-angled; otherwise, false.</returns>
         public static bool IsRight(double a, double b, double c)
         {
             double maxSide = Math.Max(a, Math.Max(b, c));

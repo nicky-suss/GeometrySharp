@@ -1,22 +1,22 @@
 namespace GeometrySharp;
 
 /// <summary>
-/// 
+/// Provides static methods for analytic geometry calculations.
 /// </summary>
 public static class AnalyticGeometry
 {
     /// <summary>
-    /// 
+    /// Provides utility methods for operations involving points.
     /// </summary>
     public static class PointUtils
     {
         /// <summary>
-        /// 
+        /// Calculates the Euclidean distance between two points in a 2D plane.
         /// </summary>
-        /// <param name="xOne"></param>
-        /// <param name="yOne"></param>
-        /// <param name="xTwo"></param>
-        /// <param name="yTwo"></param>
+        /// <param name="xOne">The X-coordinate of the first point.</param>
+        /// <param name="yOne">The Y-coordinate of the first point.</param>
+        /// <param name="xTwo">The X-coordinate of the second point.</param>
+        /// <param name="yTwo">The Y-coordinate of the second point.</param>
         /// <returns></returns>
         public static double GetDistance(double xOne, double yOne, double xTwo, double yTwo)
         {
@@ -26,13 +26,13 @@ public static class AnalyticGeometry
             return Math.Sqrt(xy);
         }
         /// <summary>
-        /// 
+        /// Calculates the midpoint between two points in a 2D plane.
         /// </summary>
-        /// <param name="xOne"></param>
-        /// <param name="yOne"></param>
-        /// <param name="xTwo"></param>
-        /// <param name="yTwo"></param>
-        /// <returns></returns>
+        /// <param name="xOne">The X-coordinate of the first point.</param>
+        /// <param name="yOne">The Y-coordinate of the first point.</param>
+        /// <param name="xTwo">The X-coordinate of the second point.</param>
+        /// <param name="yTwo">The Y-coordinate of the second point.</param>
+        /// <returns>A tuple containing the X and Y coordinates of the midpoint.</returns>
         public static (double x, double y) GetMidpoint(double xOne, double yOne, double xTwo, double yTwo)
         {
             double midX = (xOne + xTwo) / 2;
@@ -41,19 +41,19 @@ public static class AnalyticGeometry
         }
     }
     /// <summary>
-    /// 
+    /// Provides utility methods for operations involving lines.
     /// </summary>
     public static class LineUtils
     {
         /// <summary>
-        /// 
+        /// Calculates the slope of a line passing through two points.
         /// </summary>
-        /// <param name="xOne"></param>
-        /// <param name="yOne"></param>
-        /// <param name="xTwo"></param>
-        /// <param name="yTwo"></param>
-        /// <returns></returns>
-        /// <exception cref="DivideByZeroException"></exception>
+        /// <param name="xOne">The X-coordinate of the first point.</param>
+        /// <param name="yOne">The Y-coordinate of the first point.</param>
+        /// <param name="xTwo">The X-coordinate of the second point.</param>
+        /// <param name="yTwo">The Y-coordinate of the second point.</param>
+        /// <returns>The slope of the line.</returns>
+        /// <exception cref="DivideByZeroException">Thrown when the line is vertical and the change in X is zero.</exception>
         public static double GetSlope(double xOne, double yOne, double xTwo, double yTwo)
         {
             if (Math.Abs(xTwo - xOne) < 0.000001)
