@@ -75,6 +75,26 @@ public static class PlaneGeometry
             double s = (a + b + c) / 2;
             return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public static bool IsRight(double a, double b, double c)
+        {
+            double maxSide = Math.Max(a, Math.Max(b, c));
+
+            double aT = a * a;
+            double bT = b * b;
+            double cT = c * c;
+            double maxSideT = maxSide * maxSide;
+
+            double sumT = (aT + bT + cT) - maxSideT;
+
+            return Math.Abs(sumT - maxSideT) < 0.0001;
+        }
     }
     /// <summary>
     /// Provides calculations for circle geometry.
