@@ -10,5 +10,6 @@ public static class Trigonometry
     public static class TriangleRelations
     {
         public static double GetHypotenuse(double a, double b) => double.Hypot(a, b);
+        public static double GetLeg(double hypot, double knownLeg) => Math.Sqrt((hypot * hypot) - (knownLeg * knownLeg));
     }
 }
