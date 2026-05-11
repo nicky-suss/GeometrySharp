@@ -17,5 +17,6 @@ public static class Trigonometry
             return Math.Sqrt((hypot * hypot) - (knownLeg * knownLeg));
         }
         public static double GetThirdAngle(double angleA, double angleB) => 180 - (angleA + angleB);
+        public static double GetAreaBySidesAndAngle(double a, double b, double angle) => ((a * b) / 2) * Math.Sin(AngleConverter.ToRadians(angle));
     }
 }
