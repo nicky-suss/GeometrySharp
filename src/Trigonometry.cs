@@ -18,5 +18,6 @@ public static class Trigonometry
         }
         public static double GetThirdAngle(double angleA, double angleB) => 180 - (angleA + angleB);
         public static double GetAreaBySidesAndAngle(double a, double b, double angle) => ((a * b) / 2) * Math.Sin(AngleConverter.ToRadians(angle));
+        public static double GetSideByCosineLaw(double a, double b, double angle) => Math.Sqrt((a * a) + (b * b) - 2 * a * b * Math.Cos(AngleConverter.ToRadians(angle)));
     }
 }
