@@ -41,11 +41,7 @@ public static class PlaneGeometry
         /// <param name="a">The length of the first side.</param>
         /// <param name="b">The length of the second side.</param>
         /// <returns>The perimeter of the rectangle.</returns>
-        public static double GetPerimeter(double a, double b)
-        {
-            double P = a + b;
-            return P * 2;
-        }
+        public static double GetPerimeter(double a, double b) => (a + b) * 2;
     }
     /// <summary>
     /// Provides calculations for triangle geometry.
@@ -58,11 +54,7 @@ public static class PlaneGeometry
         /// <param name="b">The length of the base.</param>
         /// <param name="h">The height of the triangle.</param>
         /// <returns>The area of the triangle.</returns>
-        public static double GetArea(double b, double h)
-        {
-            double A = b * h;
-            return A / 2;
-        }
+        public static double GetArea(double b, double h) => (b * h) / 2;
         /// <summary>
         /// Calculates the area of a triangle using Heron's formula based on three side lengths.
         /// </summary>
@@ -109,21 +101,13 @@ public static class PlaneGeometry
         /// </summary>
         /// <param name="r">The radius of the circle.</param>
         /// <returns>The area of the circle.</returns>
-        public static double GetArea(double r)
-        {
-            double S = r * r;
-            return S * Math.PI;
-        }
+        public static double GetArea(double r) => (r * r) * Math.PI;
         /// <summary>
         /// Calculates the circumference (length) of a circle.
         /// </summary>
         /// <param name="r">The radius of the circle.</param>
         /// <returns>The circumference of the circle.</returns>
-        public static double GetLength(double r)
-        {
-            double L = r * Math.PI;
-            return L * 2;
-        }
+        public static double GetLength(double r) => (r * Math.PI) * 2;
     }
     /// <summary>
     /// Provides calculations for trapezoid geometry.
@@ -137,10 +121,7 @@ public static class PlaneGeometry
         /// <param name="b">The length of the second parallel side.</param>
         /// <param name="h">The height of the trapezoid.</param>
         /// <returns>The area of the trapezoid.</returns>
-        public static double GetArea(double a, double b, double h)
-        {
-            return ((a + b) / 2) * h;
-        }
+        public static double GetArea(double a, double b, double h) => ((a + b) / 2) * h;
         /// <summary>
         /// Calculates the perimeter of a trapezoid.
         /// </summary>
@@ -149,10 +130,7 @@ public static class PlaneGeometry
         /// <param name="c">Side C.</param>
         /// <param name="d">Side D.</param>
         /// <returns>The sum of all four sides.</returns>
-        public static double GetPerimeter(double a, double b, double c, double d)
-        {
-            return a + b + c + d;
-        }
+        public static double GetPerimeter(double a, double b, double c, double d) => a + b + c + d;
     }
     /// <summary>
     /// Provides calculations for rhombus geometry.
@@ -165,19 +143,13 @@ public static class PlaneGeometry
         /// <param name="dOne">The first diagonal.</param>
         /// <param name="dTwo">The second diagonal.</param>
         /// <returns>The area of the rhombus.</returns>
-        public static double GetArea(double dOne, double dTwo)
-        {
-            return (dOne * dTwo) / 2;
-        }
+        public static double GetArea(double dOne, double dTwo) => (dOne * dTwo) / 2;
         /// <summary>
         /// Calculates the perimeter of a rhombus.
         /// </summary>
         /// <param name="a">The length of a side.</param>
         /// <returns>The perimeter of the rhombus.</returns>
-        public static double GetPerimeter(double a)
-        {
-            return 4 * a;
-        }
+        public static double GetPerimeter(double a) => 4 * a;
     }
     /// <summary>
     /// Provides calculations for parallelogram geometry.
@@ -190,20 +162,14 @@ public static class PlaneGeometry
         /// <param name="b">The length of the base.</param>
         /// <param name="h">The height.</param>
         /// <returns>The area of the parallelogram.</returns>
-        public static double GetArea(double b, double h)
-        {
-            return b * h;
-        }
+        public static double GetArea(double b, double h) => b * h;
         /// <summary>
         /// Calculates the perimeter of a parallelogram.
         /// </summary>
         /// <param name="a">The length of the side.</param>
         /// <param name="b">The length of the base.</param>
         /// <returns>The perimeter of the parallelogram.</returns>
-        public static double GetPerimeter(double a, double b)
-        {
-            return (a + b) * 2;
-        }
+        public static double GetPerimeter(double a, double b) => (a + b) * 2;
     }
     /// <summary>
     /// Provides calculations for ellipse geometry.
@@ -216,10 +182,7 @@ public static class PlaneGeometry
         /// <param name="a">The semi-major axis.</param>
         /// <param name="b">The semi-minor axis.</param>
         /// <returns>The area of the ellipse.</returns>
-        public static double GetArea(double a, double b)
-        {
-            return Math.PI * a * b;
-        }
+        public static double GetArea(double a, double b) => Math.PI * (a * b);
     }
     /// <summary>
     /// Provides calculations for circular sector geometry.
@@ -232,9 +195,6 @@ public static class PlaneGeometry
         /// <param name="a">The angle of the sector in degrees.</param>
         /// <param name="r">The radius of the circle.</param>
         /// <returns>The area of the sector.</returns>
-        public static double GetArea(double a, double r)
-        {
-            return (a / 360.0) * (Math.PI * (r * r));
-        }
+        public static double GetArea(double a, double r) => (a / 360.0) * (Math.PI * (r * r));
     }
 }
