@@ -11,5 +11,6 @@ public static class Trigonometry
     {
         public static double GetHypotenuse(double a, double b) => double.Hypot(a, b);
         public static double GetLeg(double hypot, double knownLeg) => Math.Sqrt((hypot * hypot) - (knownLeg * knownLeg));
+        public static double GetThirdAngle(double angleA, double angleB) => 180 - (angleA + angleB);
     }
 }
