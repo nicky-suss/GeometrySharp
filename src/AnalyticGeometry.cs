@@ -18,8 +18,11 @@ public static class AnalyticGeometry
         /// <param name="xTwo">The X-coordinate of the second point.</param>
         /// <param name="yTwo">The Y-coordinate of the second point.</param>
         /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static double GetDistance(double xOne, double yOne, double xTwo, double yTwo)
         {
+            if (Math.Abs(xOne - xTwo) < Extra.Precision && Math.Abs(yOne - yTwo) < Extra.Precision)
+                Extra.ThrowIdenticalPoints();
             double dx = xTwo - xOne;
             double dy = yTwo - yOne;
             double xy = (dx * dx) + (dy * dy);
@@ -33,8 +36,13 @@ public static class AnalyticGeometry
         /// <param name="xTwo">The X-coordinate of the second point.</param>
         /// <param name="yTwo">The Y-coordinate of the second point.</param>
         /// <returns>A tuple containing the X and Y coordinates of the midpoint.</returns>
+        /// <exception cref="ArgumentException"></exception>
         public static (double x, double y) GetMidpoint(double xOne, double yOne, double xTwo, double yTwo)
         {
+            if (Math.Abs(xOne - xTwo) < Extra.Precision && Math.Abs(yOne - yTwo) < Extra.Precision)
+            {
+                Extra.ThrowIdenticalPoints();
+            }
             double midX = (xOne + xTwo) / 2;
             double midY = (yOne + yTwo) / 2;
             return (midX, midY);
@@ -56,9 +64,13 @@ public static class AnalyticGeometry
         /// <exception cref="DivideByZeroException">Thrown when the line is vertical and the change in X is zero.</exception>
         public static double GetSlope(double xOne, double yOne, double xTwo, double yTwo)
         {
-            if (Math.Abs(xTwo - xOne) < 0.000001)
+            if (xOne == xTwo && yOne == yTwo)
             {
-                throw new DivideByZeroException("The slope is undefined for vertical lines because the change in X is zero.");
+                Extra.ThrowIdenticalPoints();
+            }
+            if (Math.Abs(xTwo - xOne) < Extra.Precision)
+            {
+                Extra.ThrowDbz();
             }
             return (yTwo - yOne) / (xTwo - xOne);
         }
