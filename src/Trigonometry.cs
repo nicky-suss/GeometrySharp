@@ -15,13 +15,13 @@ public static class Trigonometry
         /// </summary>
         /// <param name="degrees">The angle in degrees.</param>
         /// <returns>The angle in radians.</returns>
-        public static double ToRadians(double degrees) => degrees * (Math.PI / 180);
+        public static double ToRadians(double degrees) => degrees * (Math.PI / 180.0);
         /// <summary>
         /// Converts an angle from radians to degrees.
         /// </summary>
         /// <param name="radians">The angle in radians.</param>
         /// <returns>The angle in degrees.</returns>
-        public static double ToDegrees(double radians) => radians * (180 / Math.PI);
+        public static double ToDegrees(double radians) => radians * (180.0 / Math.PI);
     }
     /// <summary>
     /// Provides methods for calculating relationships between sides and angles in a triangle.
