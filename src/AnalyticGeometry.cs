@@ -29,15 +29,15 @@ public static class AnalyticGeometry
             return Math.Sqrt(xy);
         }
         /// <summary>
-        /// 
+        /// Calculates the Euclidean distance between two points in 3D space.
         /// </summary>
-        /// <param name="xOne"></param>
-        /// <param name="yOne"></param>
-        /// <param name="zOne"></param>
-        /// <param name="xTwo"></param>
-        /// <param name="yTwo"></param>
-        /// <param name="zTwo"></param>
-        /// <returns></returns>
+        /// <param name="xOne">The X-coordinate of the first point.</param>
+        /// <param name="yOne">The Y-coordinate of the first point.</param>
+        /// <param name="zOne">The Z-coordinate of the first point.</param>
+        /// <param name="xTwo">The X-coordinate of the second point.</param>
+        /// <param name="yTwo">The Y-coordinate of the second point.</param>
+        /// <param name="zTwo">The Z-coordinate of the second point.</param>
+        /// <returns>The distance between the two points in 3D space.</returns>
         public static double GetDistance3D(double xOne, double yOne, double zOne, double xTwo, double yTwo, double zTwo)
         {
             double dx = xTwo - xOne;
@@ -65,15 +65,15 @@ public static class AnalyticGeometry
             return (midX, midY);
         }
         /// <summary>
-        /// 
+        /// Calculates the midpoint between two points in 3D space.
         /// </summary>
-        /// <param name="xOne"></param>
-        /// <param name="yOne"></param>
-        /// <param name="zOne"></param>
-        /// <param name="xTwo"></param>
-        /// <param name="yTwo"></param>
-        /// <param name="zTwo"></param>
-        /// <returns></returns>
+        /// <param name="xOne">The X-coordinate of the first point.</param>
+        /// <param name="yOne">The Y-coordinate of the first point.</param>
+        /// <param name="zOne">The Z-coordinate of the first point.</param>
+        /// <param name="xTwo">The X-coordinate of the second point.</param>
+        /// <param name="yTwo">The Y-coordinate of the second point.</param>
+        /// <param name="zTwo">The Z-coordinate of the second point.</param>
+        /// <returns>A tuple containing the X, Y, and Z coordinates of the midpoint.</returns>
         public static (double x, double y, double z) GetMidPoint3D(double xOne, double yOne, double zOne, double xTwo, double yTwo, double zTwo)
         {
             double midX3D = (xOne + xTwo) / 2;
