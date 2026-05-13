@@ -29,6 +29,23 @@ public static class AnalyticGeometry
             return Math.Sqrt(xy);
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xOne"></param>
+        /// <param name="yOne"></param>
+        /// <param name="zOne"></param>
+        /// <param name="xTwo"></param>
+        /// <param name="yTwo"></param>
+        /// <param name="zTwo"></param>
+        /// <returns></returns>
+        public static double GetDistance3D(double xOne, double yOne, double zOne, double xTwo, double yTwo, double zTwo)
+        {
+            double dx = xTwo - xOne;
+            double dy = yTwo - yOne;
+            double dz = zTwo - zOne;
+            return Math.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
+        }
+        /// <summary>
         /// Calculates the midpoint between two points in a 2D plane.
         /// </summary>
         /// <param name="xOne">The X-coordinate of the first point.</param>
