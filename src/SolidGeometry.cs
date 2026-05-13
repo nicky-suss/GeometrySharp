@@ -80,6 +80,13 @@ public static class SolidGeometry
         /// <param name="h">The height of the cone.</param>
         /// <returns>The total surface area.</returns>
         public static double GetSurfaceArea(double r, double h) => (Math.PI * r * (r + Math.Sqrt(h * h + r * r)));
+        /// <summary>
+        /// Calculates the slant height of a cone using the radius and the vertical height.
+        /// </summary>
+        /// <param name="r">The radius of the base.</param>
+        /// <param name="h">The vertical height of the cone.</param>
+        /// <returns>The slant height of the cone.</returns>
+        public static double GetSlantHeight(double r, double h) => Math.Sqrt((r * r) + (h * h));
     }
     /// <summary>
     /// Provides calculations for cuboid (rectangular prism) geometry.
