@@ -64,6 +64,23 @@ public static class AnalyticGeometry
             double midY = (yOne + yTwo) / 2;
             return (midX, midY);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xOne"></param>
+        /// <param name="yOne"></param>
+        /// <param name="zOne"></param>
+        /// <param name="xTwo"></param>
+        /// <param name="yTwo"></param>
+        /// <param name="zTwo"></param>
+        /// <returns></returns>
+        public static (double x, double y, double z) GetMidPoint3D(double xOne, double yOne, double zOne, double xTwo, double yTwo, double zTwo)
+        {
+            double midX3D = (xOne + xTwo) / 2;
+            double midY3D = (yOne + yTwo) / 2;
+            double midZ3d = (zOne + zTwo) / 2;
+            return (midX3D, midY3D, midZ3d);
+        }
     }
     /// <summary>
     /// Provides utility methods for operations involving lines.
