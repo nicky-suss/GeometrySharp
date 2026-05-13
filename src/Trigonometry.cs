@@ -34,7 +34,12 @@ public static class Trigonometry
         /// <param name="a">The length of the first leg.</param>
         /// <param name="b">The length of the second leg.</param>
         /// <returns>The length of the hypotenuse.</returns>
-        public static double GetHypotenuse(double a, double b) => double.Hypot(a, b);
+        public static double GetHypotenuse(double a, double b)
+        {
+            if (a <= 0 || b <= 0)
+                Extra.ThrowInvalidDimension();
+            return double.Hypot(a, b);
+        }
         /// <summary>
         /// Calculates the length of a missing leg in a right-angled triangle.
         /// </summary>
@@ -44,7 +49,7 @@ public static class Trigonometry
         public static double GetLeg(double hypot, double knownLeg)
         {
             if (hypot < knownLeg)
-                return 0;
+                Extra.ThrowInvalidHypotenuse();
             return Math.Sqrt((hypot * hypot) - (knownLeg * knownLeg));
         }
         /// <summary>
@@ -53,7 +58,12 @@ public static class Trigonometry
         /// <param name="angleA">The first angle in degrees.</param>
         /// <param name="angleB">The second angle in degrees.</param>
         /// <returns>The third angle in degrees.</returns>
-        public static double GetThirdAngle(double angleA, double angleB) => 180 - (angleA + angleB);
+        public static double GetThirdAngle(double angleA, double angleB)
+        {
+            if (angleA + angleB >= 180 || angleA < 0 || angleB < 0)
+                Extra.ThrowInvalidAngles();
+            return 180 - (angleA + angleB);
+        }
         /// <summary>
         /// Calculates the area of a triangle using two sides and the included angle.
         /// </summary>
@@ -61,7 +71,14 @@ public static class Trigonometry
         /// <param name="b">The length of the second side.</param>
         /// <param name="angle">The angle between the sides in degrees.</param>
         /// <returns>The area of the triangle.</returns>
-        public static double GetAreaBySidesAndAngle(double a, double b, double angle) => ((a * b) / 2) * Math.Sin(AngleConverter.ToRadians(angle));
+        public static double GetAreaBySidesAndAngle(double a, double b, double angle)
+        {
+            if (angle <= 0 || angle >= 180)
+                Extra.ThrowInvalidTriangleAngle();
+            if (a <= 0 || b <= 0)
+                Extra.ThrowInvalidDimension();
+            return ((a * b) / 2) * Math.Sin(AngleConverter.ToRadians(angle));
+        }
         /// <summary>
         /// Calculates the length of a side using the Law of Cosines.
         /// </summary>
@@ -71,9 +88,13 @@ public static class Trigonometry
         /// <returns>The length of the third side.</returns>
         public static double GetSideByCosineLaw(double a, double b, double angle)
         {
+            if (angle <= 0 || angle >= 180)
+                Extra.ThrowInvalidTriangleAngle();
+            if (a <= 0 || b <= 0)
+                Extra.ThrowInvalidDimension();
             double d = (a * a) + (b * b) - 2 * a * b * Math.Cos(AngleConverter.ToRadians(angle));
             if (d < 0)
-                d = 0;
+                return 0;
             return Math.Sqrt(d);
         }
     }
