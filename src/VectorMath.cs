@@ -40,4 +40,23 @@ public static class VectorMath
     /// <param name="z">The Z-component of the vector.</param>
     /// <returns>The magnitude of the 3D vector.</returns>
     public static double GetMagnitude3D(double x, double y, double z) => Math.Sqrt((x * x) + (y * y) + (z * z));
+    /// <summary>
+    /// Calculates the cross product of two 3D vectors.
+    /// </summary>
+    /// <param name="x1">The X-component of the first vector.</param>
+    /// <param name="y1">The Y-component of the first vector.</param>
+    /// <param name="z1">The Z-component of the first vector.</param>
+    /// <param name="x2">The X-component of the second vector.</param>
+    /// <param name="y2">The Y-component of the second vector.</param>
+    /// <param name="z2">The Z-component of the second vector.</param>
+    /// <returns>A tuple representing the resulting 3D vector perpendicular to both input vectors</returns>
+    public static (double x, double y, double z) GetCrossProduct(double x1, double y1, double z1, double x2, double y2, double z2)
+    {
+        return (
+            (y1 * z2) - (z1 * y2),
+            (z1 * x2) - (x1 * z2),
+            (x1 * y2) - (y1 * x2)
+        );
+
+    }
 }
