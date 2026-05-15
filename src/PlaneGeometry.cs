@@ -197,4 +197,45 @@ public static class PlaneGeometry
         /// <returns>The area of the sector.</returns>
         public static double GetArea(double a, double r) => (a / 360.0) * (Math.PI * (r * r));
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class Polygon
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sides"></param>
+        /// <param name="sideLength"></param>
+        /// <returns></returns>
+        public static double GetRegularArea(int sides, double sideLength)
+        {
+            if (sides < 3)
+                throw new ArgumentException("A polygon must have at least 3 sides.", nameof(sides));
+            return (sides * (sideLength * sideLength)) / (4 * Math.Tan(Math.PI / sides));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sides"></param>
+        /// <param name="sideLength"></param>
+        /// <returns></returns>
+        public static double GetApothem(int sides, double sideLength)
+        {
+            if (sides < 3)
+                throw new ArgumentException("A polygon must have at least 3 sides.", nameof(sides));
+            return sideLength / (2 * Math.Tan(Math.PI / sides));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sides"></param>
+        /// <returns></returns>
+        public static double GetInteriorAngleSum(int sides)
+        {
+            if (sides < 3)
+                throw new ArgumentException("A polygon must have at least 3 sides.", nameof(sides));
+            return (sides - 2) * 180.0;
+        }
+    }
 }
