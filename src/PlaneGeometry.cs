@@ -198,16 +198,17 @@ public static class PlaneGeometry
         public static double GetArea(double a, double r) => (a / 360.0) * (Math.PI * (r * r));
     }
     /// <summary>
-    /// 
+    /// Provides calculations for regular polygon geometry.
     /// </summary>
     public static class Polygon
     {
         /// <summary>
-        /// 
+        /// Calculates the area of a regular polygon.
         /// </summary>
-        /// <param name="sides"></param>
-        /// <param name="sideLength"></param>
-        /// <returns></returns>
+        /// <param name="sides">The number of sides.</param>
+        /// <param name="sideLength">The length of each side.</param>
+        /// <returns>The area of the regular polygon.</returns>
+        /// <exception cref="ArgumentException">Thrown when the number of sides is less than 3.</exception>
         public static double GetRegularArea(int sides, double sideLength)
         {
             if (sides < 3)
@@ -215,11 +216,12 @@ public static class PlaneGeometry
             return (sides * (sideLength * sideLength)) / (4 * Math.Tan(Math.PI / sides));
         }
         /// <summary>
-        /// 
+        /// Calculates the apothem (the radius of the inscribed circle) of a regular polygon.
         /// </summary>
-        /// <param name="sides"></param>
-        /// <param name="sideLength"></param>
-        /// <returns></returns>
+        /// <param name="sides">The number of sides.</param>
+        /// <param name="sideLength">The length of each side.</param>
+        /// <returns>The length of the apothem.</returns>
+        /// <exception cref="ArgumentException">Thrown when the number of sides is less than 3.</exception>
         public static double GetApothem(int sides, double sideLength)
         {
             if (sides < 3)
@@ -227,10 +229,11 @@ public static class PlaneGeometry
             return sideLength / (2 * Math.Tan(Math.PI / sides));
         }
         /// <summary>
-        /// 
+        /// Calculates the sum of the interior angles of a polygon in degrees.
         /// </summary>
-        /// <param name="sides"></param>
-        /// <returns></returns>
+        /// <param name="sides">The number of sides.</param>
+        /// <returns>The sum of the interior angles in degrees.</returns>
+        /// <exception cref="ArgumentException">Thrown when the number of sides is less than 3.</exception>
         public static double GetInteriorAngleSum(int sides)
         {
             if (sides < 3)
