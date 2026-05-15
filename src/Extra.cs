@@ -19,4 +19,6 @@ internal static class Extra
         throw new ArgumentException("Angle must be between 0 and 180 degrees");
     internal static void ThrowInvalidDimension() =>
         throw new ArgumentException("Side length must be greater than zero.");
+    internal static void ThrownDbz() =>
+        throw new DivideByZeroException("Cannot compute angle: one or both vector lengths are zero.");
 }
