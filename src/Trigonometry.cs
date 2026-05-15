@@ -37,7 +37,7 @@ public static class Trigonometry
         public static double GetHypotenuse(double a, double b)
         {
             if (a <= 0 || b <= 0)
-                Extra.ThrowInvalidDimension();
+                throw new ArgumentException("Side length must be greater than zero.");
             return double.Hypot(a, b);
         }
         /// <summary>
@@ -49,7 +49,7 @@ public static class Trigonometry
         public static double GetLeg(double hypot, double knownLeg)
         {
             if (hypot < knownLeg)
-                Extra.ThrowInvalidHypotenuse();
+                throw new ArgumentException("Hypotenuse must be greater than the known leg.");
             return Math.Sqrt((hypot * hypot) - (knownLeg * knownLeg));
         }
         /// <summary>
@@ -61,7 +61,7 @@ public static class Trigonometry
         public static double GetThirdAngle(double angleA, double angleB)
         {
             if (angleA + angleB >= 180 || angleA < 0 || angleB < 0)
-                Extra.ThrowInvalidAngles();
+                throw new ArgumentException("The sum of the angles must be less than 180 degrees, and each angle must be positive.");
             return 180 - (angleA + angleB);
         }
         /// <summary>
@@ -74,9 +74,9 @@ public static class Trigonometry
         public static double GetAreaBySidesAndAngle(double a, double b, double angle)
         {
             if (angle <= 0 || angle >= 180)
-                Extra.ThrowInvalidTriangleAngle();
+                throw new ArgumentException("Angle must be between 0 and 180 degrees");
             if (a <= 0 || b <= 0)
-                Extra.ThrowInvalidDimension();
+                throw new ArgumentException("Side length must be greater than zero.");
             return ((a * b) / 2) * Math.Sin(AngleConverter.ToRadians(angle));
         }
         /// <summary>
@@ -89,9 +89,9 @@ public static class Trigonometry
         public static double GetSideByCosineLaw(double a, double b, double angle)
         {
             if (angle <= 0 || angle >= 180)
-                Extra.ThrowInvalidTriangleAngle();
+                throw new ArgumentException("Angle must be between 0 and 180 degrees");
             if (a <= 0 || b <= 0)
-                Extra.ThrowInvalidDimension();
+                throw new ArgumentException("Side length must be greater than zero.");
             double d = (a * a) + (b * b) - 2 * a * b * Math.Cos(AngleConverter.ToRadians(angle));
             if (d < 0)
                 return 0;

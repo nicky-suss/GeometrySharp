@@ -70,7 +70,7 @@ public static class VectorMath
     public static double GetAngleBetween(double dotProduct, double lengthA, double lengthB)
     {
         if (lengthA == 0 || lengthB == 0)
-            Extra.ThrownDbz();
+            throw new DivideByZeroException("Cannot compute angle: one or both vector lengths are zero.");
         double A = dotProduct / (lengthA * lengthB);
         A = Math.Clamp(A, -1.0, 1.0);
         return Math.Acos(A);

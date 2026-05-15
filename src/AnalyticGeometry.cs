@@ -22,7 +22,7 @@ public static class AnalyticGeometry
         public static double GetDistance(double xOne, double yOne, double xTwo, double yTwo)
         {
             if (Math.Abs(xOne - xTwo) < Extra.Precision && Math.Abs(yOne - yTwo) < Extra.Precision)
-                Extra.ThrowIdenticalPoints();
+                throw new ArgumentException("Both points are identical. Operation requires two distinct points.");
             double dx = xTwo - xOne;
             double dy = yTwo - yOne;
             double xy = (dx * dx) + (dy * dy);
@@ -58,7 +58,7 @@ public static class AnalyticGeometry
         {
             if (Math.Abs(xOne - xTwo) < Extra.Precision && Math.Abs(yOne - yTwo) < Extra.Precision)
             {
-                Extra.ThrowIdenticalPoints();
+                throw new ArgumentException("Both points are identical. Operation requires two distinct points.");
             }
             double midX = (xOne + xTwo) / 2;
             double midY = (yOne + yTwo) / 2;
@@ -100,11 +100,11 @@ public static class AnalyticGeometry
         {
             if (xOne == xTwo && yOne == yTwo)
             {
-                Extra.ThrowIdenticalPoints();
+                throw new ArgumentException("Both points are identical. Operation requires two distinct points.");
             }
             if (Math.Abs(xTwo - xOne) < Extra.Precision)
             {
-                Extra.ThrowDbz();
+                throw new DivideByZeroException("The slope is undefined for a vertical line.");
             }
             return (yTwo - yOne) / (xTwo - xOne);
         }
