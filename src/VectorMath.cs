@@ -59,4 +59,20 @@ public static class VectorMath
         );
 
     }
+    /// <summary>
+    /// Calculates the angle between two vectors in radians using their dot product and magnitudes.
+    /// </summary>
+    /// <param name="dotProduct">The dot product of the two vectors.</param>
+    /// <param name="lengthA">The magnitude (length) of the first vector.</param>
+    /// <param name="lengthB">The magnitude (length) of the second vector.</param>
+    /// <returns>The angle between the vectors in radians.</returns>
+    /// <exception cref="DivideByZeroException">Thrown when the magnitude of either vector is zero.</exception>
+    public static double GetAngleBetween(double dotProduct, double lengthA, double lengthB)
+    {
+        if (lengthA == 0 || lengthB == 0)
+            Extra.ThrownDbz();
+        double A = dotProduct / (lengthA * lengthB);
+        A = Math.Clamp(A, -1.0, 1.0);
+        return Math.Acos(A);
+    }
 }
